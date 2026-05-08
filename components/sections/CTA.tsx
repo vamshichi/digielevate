@@ -56,7 +56,7 @@ export default function CTA() {
   }
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 border-t border-white/10">
+    <section id='contact' className="relative overflow-hidden py-20 md:py-32 border-t border-white/10">
       
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

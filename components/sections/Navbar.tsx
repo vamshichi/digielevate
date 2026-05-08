@@ -11,7 +11,7 @@ export default function Navbar() {
   const navItems = [
     { label: 'Services', href: '#services' },
     { label: 'How It Works', href: '#process' },
-    { label: 'Pricing', href: '#pricing' },
+    // { label: 'Pricing', href: '#pricing' },
     { label: 'Case Studies', href: '#industries' },
   ]
 
@@ -50,15 +50,15 @@ export default function Navbar() {
             </motion.a>
           ))}
         </div>
-
+        <a href='/#contact'>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="hidden md:block px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
         >
-          Get Started
+          Contact us
         </motion.button>
-
+        </a>
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -90,9 +90,11 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <button className="w-full px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium">
-              Get Started
-            </button>
+            <a href='/#contact'>
+              <button className="w-full px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium">
+                contact us
+              </button>
+            </a>
           </div>
         </motion.div>
       )}

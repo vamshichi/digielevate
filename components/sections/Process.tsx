@@ -205,6 +205,7 @@ export default function Process() {
           viewport={{ once: true }}
           className="text-center mt-24"
         >
+            <a href='/#contact'>
           <motion.button
             whileHover={{
               scale: 1.05,
@@ -229,6 +230,7 @@ export default function Process() {
               <ArrowRight className="w-5 h-5" />
             </motion.div>
           </motion.button>
+          </a>
         </motion.div>
       </div>
     </section>

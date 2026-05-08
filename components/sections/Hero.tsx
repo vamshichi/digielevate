@@ -74,6 +74,7 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
+            <a href='/#contact'>
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(99, 102, 241, 0.4)' }}
               whileTap={{ scale: 0.95 }}
@@ -81,13 +82,14 @@ export default function Hero() {
             >
               Schedule Consultation <ArrowRight className="w-5 h-5" />
             </motion.button>
-            <motion.button
+            </a>
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 border border-primary/40 text-primary rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors"
             >
               <Play className="w-5 h-5" /> Watch Demo
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           {/* Stats Preview */}
