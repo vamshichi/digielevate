@@ -153,6 +153,7 @@ export default function About() {
             </div>
 
             {/* CTA */}
+            <a href='/#contact'>
             <motion.button
               whileHover={{
                 scale: 1.05,
@@ -163,6 +164,7 @@ export default function About() {
             >
               Start Your Transformation
             </motion.button>
+            </a>
           </motion.div>
 
           {/* RIGHT VISUAL */}
