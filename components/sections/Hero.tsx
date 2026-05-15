@@ -25,7 +25,9 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center">
+    <section
+    id='home'
+     className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -75,13 +77,13 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a href='/#contact'>
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(99, 102, 241, 0.4)' }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity glow"
-            >
-              Schedule Consultation <ArrowRight className="w-5 h-5" />
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(99, 102, 241, 0.4)' }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity glow"
+              >
+                Schedule Consultation <ArrowRight className="w-5 h-5" />
+              </motion.button>
             </a>
             {/* <motion.button
               whileHover={{ scale: 1.05 }}
@@ -98,9 +100,11 @@ export default function Hero() {
             className="mt-20 grid grid-cols-3 gap-4 md:gap-8"
           >
             {[
-              { value: '500+', label: 'Businesses Transformed' },
-              { value: '98%', label: 'Client Satisfaction' },
-              { value: '$2.5B', label: 'Revenue Generated' },
+
+              { value: '10+', label: 'Projects Completed' },
+              { value: 'Modern', label: 'Enterprise Tech Stack' },
+              { value: '24/7', label: 'Client Support' },
+
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>

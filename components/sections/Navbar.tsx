@@ -27,6 +27,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05 }}
           className="flex items-center gap-2"
         >
+          <a href="#home"  >
           <Image
             src="/logo.png"
             alt="DigiElevate Pro"
@@ -34,6 +35,7 @@ export default function Navbar() {
             height={60}
             className="rounded h-12"
           />
+          </a>
           {/* <span className="text-xl font-bold gradient-text">DigiElevate</span> */}
         </motion.div>
 

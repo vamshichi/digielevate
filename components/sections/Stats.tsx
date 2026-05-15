@@ -1,7 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import {
   FaBuilding,
   FaStar,
@@ -9,78 +8,30 @@ import {
   FaCalendarAlt,
 } from 'react-icons/fa'
 
-function AnimatedCounter({
-  end,
-  duration = 2,
-  isDecimal = false,
-}: {
-  end: number
-  duration?: number
-  isDecimal?: boolean
-}) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-
-  const isInView = useInView(ref, {
-    once: true,
-    margin: '-100px',
-  })
-
-  useEffect(() => {
-    if (!isInView) return
-
-    let startTime: number | null = null
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime
-
-      const elapsed = currentTime - startTime
-      const progress = Math.min(elapsed / (duration * 1000), 1)
-
-      const currentValue = progress * end
-
-      setCount(currentValue)
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
-    }
-
-    requestAnimationFrame(animate)
-  }, [isInView, end, duration])
-
-  return (
-    <span ref={ref}>
-      {isDecimal ? count.toFixed(1) : Math.floor(count)}
-    </span>
-  )
-}
-
 export default function Stats() {
   const stats = [
     {
-      value: 500,
-      suffix: '+',
-      label: 'Businesses Transformed',
+      title: 'Custom Web Development',
+      description:
+        'Modern and scalable websites built with the latest technologies.',
       icon: <FaBuilding />,
     },
     {
-      value: 98,
-      suffix: '%',
-      label: 'Client Satisfaction Rate',
+      title: 'Modern UI/UX Experiences',
+      description:
+        'Clean, responsive, and premium user experiences for every device.',
       icon: <FaStar />,
     },
     {
-      value: 2.5,
-      suffix: 'B+',
-      label: 'Revenue Generated for Clients',
+      title: 'CRM & Dashboard Solutions',
+      description:
+        'Powerful admin dashboards and business management systems.',
       icon: <FaMoneyBillWave />,
-      isDecimal: true,
     },
     {
-      value: 15,
-      suffix: '+',
-      label: 'Years of Industry Experience',
+      title: 'Dedicated Client Support',
+      description:
+        'Reliable communication and continuous support throughout projects.',
       icon: <FaCalendarAlt />,
     },
   ]
@@ -111,7 +62,7 @@ export default function Stats() {
             className="text-4xl md:text-6xl font-bold mb-6"
           >
             <span className="gradient-text">
-              Proven Results That Matter
+              Built for Modern Businesses
             </span>
           </motion.h2>
 
@@ -122,11 +73,12 @@ export default function Stats() {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            We deliver measurable impact across every partnership with premium digital solutions.
+            We create modern digital experiences that help businesses grow,
+            scale, and stand out online.
           </motion.p>
         </motion.div>
 
-        {/* Stats Grid */}
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, idx) => (
             <motion.div
@@ -161,24 +113,14 @@ export default function Stats() {
                 {stat.icon}
               </motion.div>
 
-              {/* Counter */}
-              <motion.div
-                initial={{ scale: 0.8 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
-                className="relative z-10 text-4xl md:text-5xl font-bold text-white mb-3"
-              >
-                <AnimatedCounter
-                  end={stat.value}
-                  isDecimal={stat.isDecimal}
-                />
-                {stat.suffix}
-              </motion.div>
+              {/* Title */}
+              <h3 className="relative z-10 text-2xl font-bold text-white mb-4">
+                {stat.title}
+              </h3>
 
-              {/* Label */}
+              {/* Description */}
               <p className="relative z-10 text-muted-foreground text-sm md:text-base leading-relaxed">
-                {stat.label}
+                {stat.description}
               </p>
 
               {/* Bottom Shine */}

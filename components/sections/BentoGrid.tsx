@@ -16,28 +16,24 @@ export default function BentoGrid() {
       description:
         'Optimized performance that keeps your users engaged with ultra-fast loading experiences and seamless interactions.',
       icon: Zap,
-      span: 'md:col-span-2',
     },
     {
       title: 'Enterprise Security',
       description:
         'Advanced security architecture with enterprise-grade encryption, secure infrastructure, and data protection.',
       icon: Lock,
-      span: 'md:col-span-2',
     },
     {
       title: 'Mobile First',
       description:
         'Responsive digital experiences crafted perfectly for mobile, tablet, and desktop users.',
       icon: Smartphone,
-      span: 'md:col-span-1',
     },
     {
       title: 'Data Driven',
       description:
         'Smart analytics and actionable insights to help your business scale strategically.',
       icon: Database,
-      span: 'md:col-span-1',
     },
   ]
 
@@ -62,7 +58,7 @@ export default function BentoGrid() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: 'easeOut'
+        ease: 'easeOut',
       },
     },
   }
@@ -128,13 +124,13 @@ export default function BentoGrid() {
           </motion.p>
         </motion.div>
 
-        {/* Bento Grid */}
+        {/* 2 Grid Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {features.map((feature, idx) => {
             const Icon = feature.icon
@@ -152,7 +148,7 @@ export default function BentoGrid() {
                   stiffness: 180,
                   damping: 18,
                 }}
-                className={`group relative min-h-[320px] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-8 flex flex-col justify-between cursor-pointer ${feature.span}`}
+                className="group relative min-h-[320px] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-2xl p-8 flex flex-col justify-between cursor-pointer"
               >
                 
                 {/* Hover Gradient */}
@@ -208,7 +204,7 @@ export default function BentoGrid() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed break-words">
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
